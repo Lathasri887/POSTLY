@@ -41,12 +41,3 @@ Postly was built as a performance-focused, full-stack side project to:
 
 ---
 
-## 🛠️ Setup Instructions
-
-### 1. Clone the repository
-
-```bash
-git clone https:/srivastav04/your-username/postly.git
-cd postly
-
-
