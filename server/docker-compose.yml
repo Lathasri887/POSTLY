@@ -1,0 +1,32 @@
+version: "4.0"
+
+services:
+  node:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    env_file:
+      - fileName=.env
+    networks:
+      - app-network
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: srivastav
+      MONGO_INITDB_ROOT_PASSWORD: mypassword
+    volumes:
+      - mongo-volumes:/data/db
+    networks:
+      - app-network
+
+volumes:
+  mongo-volumes:
+
+networks:
+  app-network:
+    driver: bridge
